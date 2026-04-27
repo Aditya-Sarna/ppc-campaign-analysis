@@ -1,0 +1,98 @@
+{
+  "theme": "Light",
+  "archetype": "Editorial Premium (Notion/Apple-style + Financial Times)",
+  "typography": {
+    "font_families": {
+      "heading": "'Cormorant Garamond', serif",
+      "body": "'Manrope', sans-serif",
+      "mono": "'JetBrains Mono', monospace"
+    },
+    "scale": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl font-light tracking-tighter text-ink",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl font-light tracking-tight text-ink",
+      "h3": "text-xl sm:text-2xl font-medium tracking-tight text-ink",
+      "h4": "text-lg sm:text-xl font-medium text-ink",
+      "kpi_value": "text-5xl sm:text-6xl font-light tracking-tighter text-[#111110] font-serif",
+      "kpi_label": "text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-[#6B6A68] font-sans",
+      "body": "text-base leading-relaxed text-[#6B6A68] font-sans",
+      "small": "text-sm leading-normal text-[#6B6A68] font-sans"
+    },
+    "google_fonts_url": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+  },
+  "colors": {
+    "background": "#F9F9F6",
+    "surface": "#FFFFFF",
+    "text_primary": "#111110",
+    "text_secondary": "#6B6A68",
+    "border": "#E5E5E0",
+    "accent": "#D1603D",
+    "accent_hover": "#B34D2E",
+    "semantic": {
+      "high": "#4A7A64",
+      "low": "#C84B31",
+      "neutral": "#A5ACB5"
+    },
+    "charts": [
+      "#111110",
+      "#D1603D",
+      "#DDA77B",
+      "#7D8471",
+      "#A5ACB5"
+    ]
+  },
+  "spacing_and_layout": {
+    "philosophy": "Airy, magazine-style layouts with generous whitespace. Use grid lines to separate content instead of heavy boxes.",
+    "page_padding": "p-6 md:p-12 lg:p-16",
+    "section_gap": "gap-12 md:gap-16 lg:gap-24",
+    "grid_system": "Bento Grid (Control Room style) but with 'gap-8' to 'gap-12' for breathing room.",
+    "border_radius": "rounded-lg (subtle 8px) for containers, rounded-full for pills/chips."
+  },
+  "components": {
+    "kpi_cards": {
+      "style": "Cardless or flat white surface. Top hairline border in Accent color or pure Ink. Massive serif typography for the value.",
+      "classes": "flex flex-col justify-between p-6 bg-white border border-[#E5E5E0] rounded-xl shadow-[0_2px_10px_rgba(0,0,0,0.02)] transition-transform hover:-translate-y-1 hover:shadow-md"
+    },
+    "filter_bar": {
+      "style": "Top-aligned sticky bar with airy, minimal multiselect dropdowns. No heavy backgrounds.",
+      "classes": "flex flex-wrap items-center gap-4 py-4 mb-8 border-b border-[#E5E5E0] bg-[#F9F9F6]/80 backdrop-blur-xl z-50 sticky top-0"
+    },
+    "tabs": {
+      "style": "Editorial underline style. No pills. Bold ink for active, muted stone for inactive.",
+      "classes": "flex gap-8 border-b border-[#E5E5E0] text-sm uppercase tracking-widest"
+    },
+    "charts": {
+      "style": "Minimalist Recharts. Remove outer grid lines, use hairline axes, clean tooltips with frosted glass.",
+      "tooltip_classes": "bg-white/90 backdrop-blur-md border border-[#E5E5E0] p-4 shadow-xl rounded-lg font-sans text-sm"
+    },
+    "data_tables": {
+      "style": "Financial Times style. Hairline horizontal borders only. No vertical borders. Generous row padding.",
+      "header_classes": "text-xs uppercase tracking-[0.15em] text-[#6B6A68] border-b-2 border-[#111110] pb-4 text-left font-sans",
+      "row_classes": "border-b border-[#E5E5E0] transition-colors hover:bg-stone-50/50"
+    },
+    "heatmaps": {
+      "style": "Color-graded cells using the accent color (Terracotta) fading into off-white.",
+      "cell_classes": "rounded-md border border-white/50"
+    }
+  },
+  "motion": {
+    "entrance": "Staggered fade-up (opacity 0 to 1, translateY 10px to 0) using framer-motion.",
+    "hover": "Subtle -translate-y-1 on cards, text color transitions on links (duration-200 ease-out).",
+    "charts": "Gentle draw/grow animations on mount."
+  },
+  "accessibility": {
+    "contrast": "Ensure text primary (#111110) against background (#F9F9F6) exceeds 7:1.",
+    "focus": "focus:ring-2 focus:ring-[#D1603D] focus:ring-offset-2 focus:ring-offset-[#F9F9F6] focus:outline-none",
+    "test_ids": "All interactive elements must have data-testid attributes (e.g., data-testid='filter-platform-select')."
+  },
+  "instructions_to_main_agent": [
+    "Build an editorial-style dashboard using React, Tailwind CSS, Recharts, and Framer Motion.",
+    "Use standard JS files (not TSX) as this is a JS environment.",
+    "DO NOT use generic Shadcn heavy cards; strip them down to hairline borders and flat surfaces with ample padding.",
+    "Apply the typography scale strictly: 'Cormorant Garamond' for massive KPIs and main headers, 'Manrope' for body and UI elements.",
+    "Ensure the chart color palette mapped in 'colors.charts' is utilized for the Recharts components.",
+    "No auth or predictions functionality needed (skip them completely).",
+    "Layout should be top filter bar + dense but airy data grids beneath.",
+    "All complex interactions (multiselect, tabs) must be built using Shadcn UI primitives but styled to match the editorial guidelines (no default Vercel aesthetic).",
+    "Implement the explicit tabs/sections: Insights, ROAS Analysis, Geographic & Audience, CPC & Spend, Trends, Correlation."
+  ]
+}
